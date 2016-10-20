@@ -1,0 +1,35 @@
+
+body {
+ 	font-family: 'Open Sans', sans-serif;
+ 	background: url('../images/sierra-1920.jpg') top center ;
+ 	/*background-size:  100%;*/
+}
+.app-container {
+	width:1000px;
+	height: 618px;
+	overflow: hidden;
+	position: relative;
+	margin:1em auto;
+	background: #fff;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.29);
+
+}
+.main {
+	overflow: hidden;
+	display: flex;
+}
+.main-tags {
+	flex: 1;
+}
+.main-list {
+	flex: 2;
+}
+.main-note {
+	flex: 5;
+}
+.main-note h1 {
+
+}
+.main-note p {
+
+}

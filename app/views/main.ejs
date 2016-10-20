@@ -1,0 +1,107 @@
+<!DOCTYPE html >
+<html ng-app="app">
+<head>
+    <title><%= title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Signin Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PHINOTE v0.0.1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-cookies.js"></script>
+    <script src="/javascripts/angular/app.js"></script>
+
+    <!--editable-->
+    <script src="/javascripts/angular-editable-text.min.js"></script>
+    <script src="/javascripts/socket.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/angular-editable-text.min.css">
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+
+    <!-- Custom styles for this template -->
+
+
+    <!-- Mobile Specific Metas
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <!-- <link rel="stylesheet" href="assets/css/skeleton.css"> -->
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+
+    <!-- <script src="assets/js/angular/controllers/main-controller.js"></script> -->
+    <link rel="stylesheet" href="stylesheets/app.css">
+</head>
+
+<body>
+
+
+<div ng-controller="MainController">
+
+    <div class="app-container container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <a href="#" class="btn btn-default" ng-click="newNote()"><span class="glyphicon glyphicon-plus"></span> New Note</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2">
+                <div class="main-tags">
+                    <ul ng-repeat="tag in tagList">
+                        <li><a href="#">{{tag.name}}</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="main-list">
+                    <ul id="noteList" ng-repeat="note in noteList">
+
+                        <li><a href="#" ng-click="show(note)">{{note.title}}</a></li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+
+                <div class="main-note">
+                    <div class="note-container">
+                        <h1 editable-text="selectedNote.title" on-change="titleUpdate(value)" placeholder="Title"></h1>
+                        <p editable-text="selectedNote.text" on-change="textUpdate(value)" placeholder="Text"></p>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+</script>
+</body>
+</html>
